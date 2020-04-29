@@ -11,3 +11,15 @@ before_install:
 
 script:
   - docker run -e CI=true gilsway/docker-react npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-reack"
+  env: "DockerReack-env"
+  bucker_name: "elasticbeanstalk-us-east-2-521296517336"
+  bucket_path: "docker-reack"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
