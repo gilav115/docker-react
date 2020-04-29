@@ -17,7 +17,7 @@ deploy:
   region: "us-east-2"
   app: "docker-reack"
   env: "DockerReack-env"
-  bucker_name: "elasticbeanstalk-us-east-2-521296517336"
+  bucket_name: "elasticbeanstalk-us-east-2-521296517336"
   bucket_path: "docker-reack"
   on:
     branch: master
