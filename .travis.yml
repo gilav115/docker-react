@@ -1,0 +1,13 @@
+language: node.js
+node_js:
+  - 8
+
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t gilsway/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true gilsway/docker-react npm run test
